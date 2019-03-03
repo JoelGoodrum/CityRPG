@@ -16,28 +16,26 @@
 
 import java.util.*;
 
-public class WorkBuilding extends Player {
+public class WorkBuilding {
 	
-  // level
-  public static void playerCubacle(Player player) {
+
+  //cubacle level
+  public static void cubacle(Player player) {
 
     //make level
-    Levels pipe1 = new Levels(
+    Levels cubacleObj = new Levels(
       "your in your cubacle and its such a boring day.\n" +
       "press \"S\" to go to the social room.\n" +
       "press \"C\" to log on computer.\n",
       "commands: S, C, "
     );
 
-    //show level description
-    System.out.println(pipe1.description);
-
-    //show commands
-    System.out.print(pipe1.commands);
+    //show level description + commands
+    cubacleObj.showDescription();  
     player.showCommands();
-    System.out.print("\nyour command: ");
 
     //player input
+    System.out.print("\nyour command: ");
     Scanner console = new Scanner(System.in);
     String input = console.next();
     System.out.println();
@@ -48,7 +46,7 @@ public class WorkBuilding extends Player {
     String output = player.commandInput(input);
     if(output.length() > 0){
       System.out.println(output);
-      playerCubacle(player);
+      cubacle(player);
     }
 
     //social room nav
@@ -59,7 +57,7 @@ public class WorkBuilding extends Player {
     //log on computer
     else if(input.equals("C")) {
       System.out.println("nothing special on my Facebook\n");
-      playerCubacle(player);
+      cubacle(player);
     }
 
 
@@ -72,7 +70,7 @@ public class WorkBuilding extends Player {
     //display message input invalid message
     else {
       System.out.println("invalid command, try again.\n");
-      playerCubacle(player);
+      cubacle(player);
     }
 
   }
@@ -81,7 +79,7 @@ public class WorkBuilding extends Player {
   //social room lvl
   public static void socialRoom(Player player) {
     //make level
-    Levels socialRoom = new Levels(
+    Levels socialRoomObj = new Levels(
       "your in the social room.\n" +
       "theres a ping pong table, couch, tv, and a soda machine\n" +
       "press \"CB\" to go to your cubacle.\n" +
@@ -90,10 +88,7 @@ public class WorkBuilding extends Player {
     );
 
     //show level description
-    System.out.println(socialRoom.description);
-
-    //show commands
-    System.out.print(socialRoom.commands);
+    socialRoomObj.showDescription();
     player.showCommands();
     System.out.print("\nyour command: ");
 
@@ -108,13 +103,13 @@ public class WorkBuilding extends Player {
     String output = player.commandInput(input);
     if(output.length() > 0){
       System.out.println(output);
-      playerCubacle(player);
+      socialRoom(player);
     }
 
     //return to cubacle room nav
     else if(input.equals("CB")) {
       System.out.println();
-      playerCubacle(player);
+      socialRoom(player);
     }
 
     //log on computer
@@ -133,14 +128,59 @@ public class WorkBuilding extends Player {
     //display message input invalid message
     else {
       System.out.println("invalid command, try again.\n");
-      playerCubacle(player);
+      socialRoom(player);
     }
   	 
   }
 
+
   //hallway level
   public static void hallway(Player player) {
-    System.out.println("your in the hallway.");
+    //make level
+    Levels hallwayObj = new Levels(
+      "your in the hallway.\n" +
+      "the walls are gray and theres are waterfountains.\n" +
+      "press \"E\" to go to the elevator.\n" +
+      "press \"S\" go to the socialRoom.\n",
+      "commands: E, S, "
+    );
+
+    //show level description
+    hallwayObj.showDescription();
+    player.showCommands();
+    System.out.print("\nyour command: ");
+
+    //player input
+    Scanner console = new Scanner(System.in);
+    String input = console.next();
+    System.out.println();
+
+    //take input
+    //if input == constant input
+    //display constant input
+    String output = player.commandInput(input);
+    if(output.length() > 0){
+      System.out.println(output);
+      hallway(player);
+    }
+
+    //level nav to elevator
+    else if(input.equals("E")) {
+      System.out.println();
+
+      //access to OutSide level
+      OutSide outside = new OutSide();
+
+      outside.frontOfBuilding(player);
+    }
+
+    //level nav to social room
+    else if(input.equals("S")) {
+      System.out.println();
+      socialRoom(player);
+    }
+
   }
+
 
 }

@@ -2,9 +2,9 @@
 public class Levels {
 
   //level variales
-  String description;
-  String commands;
-  String object;
+  private String description;
+  private String commands;
+  private String object;
 
   //level constructor
   public Levels(String description, String commands){
@@ -14,7 +14,8 @@ public class Levels {
   
   //show level description
   public void showDescription(){
-    System.out.println(this.description);
+    System.out.print(this.description);
+    System.out.print(this.commands);
   }
 
 }

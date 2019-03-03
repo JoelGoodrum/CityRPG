@@ -20,6 +20,19 @@ user input: ...
 level objects allow user to display description when needed
 methods allow user to traverse through objects
 
+//SYNTAX//
+level methods will just be the name of the level
+ex.
+public static void level(){
+  
+}
+methods are responsible for manuvering through the map
+
+level object will end with Obj at the end
+ex.
+levelObj
+level objects will store the levels data
+
 ////MAP//////
          _____________________
          |                   |
@@ -41,6 +54,8 @@ public class CityRPG {
 
   public static void main(String[] args) {
 
+    System.out.println();
+
     //make player obj
     Player player = new Player();
 
@@ -48,7 +63,7 @@ public class CityRPG {
     WorkBuilding workBuilding = new WorkBuilding();
 
     //start game
-    workBuilding.playerCubacle(player);
+    workBuilding.cubacle(player);
     
   }
 
