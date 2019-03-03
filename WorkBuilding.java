@@ -80,7 +80,67 @@ public class WorkBuilding extends Player {
 
   //social room lvl
   public static void socialRoom(Player player) {
-  	System.out.println("not much to do here.");  
+    //make level
+    Levels socialRoom = new Levels(
+      "your in the social room.\n" +
+      "theres a ping pong table, couch, tv, and a soda machine\n" +
+      "press \"CB\" to go to your cubacle.\n" +
+      "press \"H\" go to the hallway.\n",
+      "commands: CB, H, "
+    );
+
+    //show level description
+    System.out.println(socialRoom.description);
+
+    //show commands
+    System.out.print(socialRoom.commands);
+    player.showCommands();
+    System.out.print("\nyour command: ");
+
+    //player input
+    Scanner console = new Scanner(System.in);
+    String input = console.next();
+    System.out.println();
+
+    //take input
+    //if input == constant input
+    //display constant input
+    String output = player.commandInput(input);
+    if(output.length() > 0){
+      System.out.println(output);
+      playerCubacle(player);
+    }
+
+    //return to cubacle room nav
+    else if(input.equals("CB")) {
+      System.out.println();
+      playerCubacle(player);
+    }
+
+    //log on computer
+    else if(input.equals("H")) {
+      System.out.println();
+      hallway(player);
+    }
+
+
+    //exit game
+    else if(input.equals("exit")){
+      System.out.println("thank you for playing.");
+    }
+    
+    //if input is invalid
+    //display message input invalid message
+    else {
+      System.out.println("invalid command, try again.\n");
+      playerCubacle(player);
+    }
+  	 
+  }
+
+  //hallway level
+  public static void hallway(Player player) {
+    System.out.println("your in the hallway.");
   }
 
 }
