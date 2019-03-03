@@ -1,3 +1,22 @@
+//all levels for OutSide 
+
+/*
+///// MAP ////////
+		________     ________
+		|		|	| 		|
+		| home	|	| Bank	|
+		|_______	________|
+                |	|_____________
+			    |				  |
+________________|		Park	  |
+|				|	_____________ |
+| Work Building 	|
+|_______________|	|
+				|	|
+				|	|
+				|
+
+*/
 import java.util.*;
 
 public class OutSide {

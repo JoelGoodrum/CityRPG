@@ -1,4 +1,6 @@
 //make level objects
+import java.io.IOException;
+
 public class Levels {
 
   //level variales
@@ -17,5 +19,6 @@ public class Levels {
     System.out.print(this.description);
     System.out.print(this.commands);
   }
+
 
 }

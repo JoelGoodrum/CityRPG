@@ -33,27 +33,16 @@ ex.
 levelObj
 level objects will store the levels data
 
-////MAP//////
-         _____________________
-         |                   |
-         | cubacles          |
- ________|          _________|
- |               __|
- | social room  |________
- |________              |
-          |             |___________
-          | hallway       elevator  |
-          |______________           |
-                        |___________|
-
 */
 import java.util.*;
+import java.io.*;
 
 public class CityRPG {
 //main method is responsible for running the game
 
   public static void main(String[] args) {
 
+  	cls();
     System.out.println();
 
     //make player obj
@@ -66,5 +55,19 @@ public class CityRPG {
     workBuilding.cubacle(player);
     
   }
+
+  //clear cmd 
+  //code from https://stackoverflow.com/questions/2979383/java-clear-the-console
+  public static void cls(){
+    //Clears Screen in java
+    try {
+        if (System.getProperty("os.name").contains("Windows"))
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        else
+            Runtime.getRuntime().exec("clear");
+            System.out.println();
+    } catch (IOException | InterruptedException ex) {}
+  }
+  //end code from https://stackoverflow.com/questions/2979383/java-clear-the-console 
 
 }

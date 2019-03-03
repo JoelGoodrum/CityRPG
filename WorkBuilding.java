@@ -1,3 +1,4 @@
+import java.io.*;
 //have all the levels in WorkBuilding
 /*
 ////MAP//////
@@ -45,17 +46,20 @@ public class WorkBuilding {
     //display constant input
     String output = player.commandInput(input);
     if(output.length() > 0){
+      cls();
       System.out.println(output);
       cubacle(player);
     }
 
     //social room nav
     else if(input.equals("S")) {
+      cls();
       socialRoom(player);
     }
 
     //log on computer
     else if(input.equals("C")) {
+      cls();
       System.out.println("nothing special on my Facebook\n");
       cubacle(player);
     }
@@ -69,6 +73,7 @@ public class WorkBuilding {
     //if input is invalid
     //display message input invalid message
     else {
+      cls();
       System.out.println("invalid command, try again.\n");
       cubacle(player);
     }
@@ -102,18 +107,21 @@ public class WorkBuilding {
     //display constant input
     String output = player.commandInput(input);
     if(output.length() > 0){
+      cls();
       System.out.println(output);
       socialRoom(player);
     }
 
     //return to cubacle room nav
     else if(input.equals("CB")) {
+      cls();
       System.out.println();
-      socialRoom(player);
+      cubacle(player);
     }
 
     //log on computer
     else if(input.equals("H")) {
+      cls();
       System.out.println();
       hallway(player);
     }
@@ -127,6 +135,7 @@ public class WorkBuilding {
     //if input is invalid
     //display message input invalid message
     else {
+      cls();
       System.out.println("invalid command, try again.\n");
       socialRoom(player);
     }
@@ -160,13 +169,14 @@ public class WorkBuilding {
     //display constant input
     String output = player.commandInput(input);
     if(output.length() > 0){
+      cls();
       System.out.println(output);
       hallway(player);
     }
 
     //level nav to elevator
     else if(input.equals("E")) {
-      System.out.println();
+      cls();
 
       //access to OutSide level
       OutSide outside = new OutSide();
@@ -176,11 +186,26 @@ public class WorkBuilding {
 
     //level nav to social room
     else if(input.equals("S")) {
-      System.out.println();
+      cls();
       socialRoom(player);
     }
 
   }
+
+  
+  //clear cmd 
+  //code from https://stackoverflow.com/questions/2979383/java-clear-the-console
+  public static void cls(){
+    //Clears Screen in java
+    try {
+        if (System.getProperty("os.name").contains("Windows"))
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        else
+            Runtime.getRuntime().exec("clear");
+            System.out.println();
+    } catch (IOException | InterruptedException ex) {}
+  }
+  //end code from https://stackoverflow.com/questions/2979383/java-clear-the-console 
 
 
 }
