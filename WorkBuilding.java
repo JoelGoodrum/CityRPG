@@ -19,6 +19,18 @@ import java.util.*;
 
 public class WorkBuilding {
 	
+  private static String WorkBuildingMap =          
+  "       _____________________\n"+
+  "       |                   |\n"+
+  "       | cubacles          |\n"+
+  " ______|            _______|\n"+
+  " |               __|\n"+
+  " | social room  |_____\n"+
+  " |________________    |\n"+
+  "        |             |___________\n"+
+  "        | hallway       elevator  |\n"+
+  "        |______________           |\n"+
+  "                      |___________|\n";
 
   //cubacle level
   public static void cubacle(Player player) {
@@ -61,6 +73,13 @@ public class WorkBuilding {
     else if(input.equals("C")) {
       cls();
       System.out.println("nothing special on my Facebook\n");
+      cubacle(player);
+    }
+
+    //see map
+    else if(input.equals("map")) {
+      cls();
+      map();
       cubacle(player);
     }
 
@@ -124,6 +143,13 @@ public class WorkBuilding {
       cls();
       System.out.println();
       hallway(player);
+    }
+
+    //see map
+    else if(input.equals("map")) {
+      cls();
+      map();
+      socialRoom(player);
     }
 
 
@@ -190,9 +216,22 @@ public class WorkBuilding {
       socialRoom(player);
     }
 
+    //see map
+    else if(input.equals("map")) {
+      cls();
+      map();
+      hallway(player);
+    }
+
   }
 
   
+  //Display level map
+  public static void map() {
+    System.out.println(WorkBuildingMap);
+  }
+
+
   //clear cmd 
   //code from https://stackoverflow.com/questions/2979383/java-clear-the-console
   public static void cls(){
