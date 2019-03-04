@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 //responsible for keeping track of player items and other info
 public class Player {
@@ -104,6 +105,7 @@ public class Player {
     }
   }
 
+
   //see if input is a constant command
   public String commandInput(String input){
 
@@ -129,5 +131,19 @@ public class Player {
     }
     return false;
   }
+
+  //clear cmd 
+  //code from https://stackoverflow.com/questions/2979383/java-clear-the-console
+  public static void cls(){
+    //Clears Screen in java
+    try {
+        if (System.getProperty("os.name").contains("Windows"))
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        else
+            Runtime.getRuntime().exec("clear");
+            System.out.println();
+    } catch (IOException | InterruptedException ex) {}
+  }
+  //end code from https://stackoverflow.com/questions/2979383/java-clear-the-console
 
 }
