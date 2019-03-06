@@ -8,19 +8,22 @@ public class Player {
   private int health;
   private String[] items;
   private String[] commands;
+  public double cash;
 
 
   //make player obj
   public Player(){
+    cash = 500.00;
     health = 100;
     items = new String[5]; //five is how many items player can keep
 
     //constant commands
-    commands = new String[4];
+    commands = new String[5];
     commands[0] = "health";
     commands[1] = "items";
     commands[2] = "exit";
     commands[3] = "map";
+    commands[4] = "cash";
     
   }
 
@@ -63,6 +66,25 @@ public class Player {
 
   }
   
+  //see if bag if full
+  public boolean bagFull() {
+
+    int bagSize = 0;
+
+    for(int i = 0; i < this.items.length; i++) {
+
+        if(this.items[i] != null) {
+          bagSize++;
+        } 
+    }
+
+    if(bagSize > 4) {
+      return true;
+    }
+
+    return false;
+
+  }
 
   //add items
   public void addItem(String playerItem) {
@@ -131,6 +153,7 @@ public class Player {
     }
     return false;
   }
+
 
   //clear cmd 
   //code from https://stackoverflow.com/questions/2979383/java-clear-the-console

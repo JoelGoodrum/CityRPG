@@ -138,6 +138,12 @@ public class WorkBuilding {
       cubacle(player);
     }
 
+    //go to vending machine
+    else if(input.equals("V")) {
+      player.cls();
+      vendingMachine(player);
+    }
+
     //log on computer
     else if(input.equals("H")) {
       player.cls();
@@ -222,6 +228,45 @@ public class WorkBuilding {
       map();
       hallway(player);
     }
+
+  }
+
+  //vending machine
+  public static void vendingMachine(Player player){
+
+    //machine variables
+    String[] machineItems = {"coke","pepsi"};
+    double[] machinePrice = {2.00, 3.50};
+    //vending machine obj and items
+    VendingMachine machine = new VendingMachine(
+      machineItems, machinePrice
+    );
+
+    machine.printItems();
+
+    //take player input
+    Scanner console = new Scanner(System.in);
+    String input = console.next();
+    System.out.println();
+
+    if(input.equals("coke")){
+      player.cls();
+      machine.buyItem(machine, "coke", player);
+      vendingMachine(player);
+    }
+
+    else if(input.equals("pepsi")){
+      machine.buyItem(machine, "pepsi", player);
+    }
+
+    else if(input.equals("S")){
+      socialRoom(player);
+    }
+
+    else {
+      System.out.println("invalid");
+    }
+
 
   }
 

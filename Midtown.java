@@ -3,25 +3,21 @@
 /*
 ///// MAP ////////
 				
-			 ##Uptown##
-
-		________       ________
-		|		|  |  | 		|______
-		| hotel	|	  | Bank	|	    |
-		|_______   |   _________|	    |
-        |       	  			        |
-		| maket |  |		Park	    |     
-________|_______| 	 	     	        |    ##East Village##  
-|				|  |   ____________     |
-| Work Building 	  |		       |    |
-|_______________|  |  |            |____|
-	|			|	  |   gym  	     |     
-	| gas 			  |				 |
-	|  station		  |  	  		 |
-	|___________|     |______________|
-
-
-		 	##Downtown##
+ "              ##Uptown##\n"+
+ "                                \n"+
+ "         _______       _________ \n"+
+ "        |       |  |  |         |______ \n"+
+ "        | hotel |     |  Bank   |      | \n"+
+ "        |_______   |   _________|      | \n"+
+ "        |                              | \n"+
+ "        | maket |  |    Park           | \n"+    
+ "  ______|_______|      ______          |    ##East Village## \n"+  
+ " |              |  |  |      |_        |  \n"+    
+ " | Work Building      |  gym   |       | \n"+
+ " |______________|  |  |________|_______| \n"+
+ "                                       \n"+
+ "                                       \n"+
+ "              ##Downtown##  ";
 
 */
 import java.util.*;
@@ -88,12 +84,12 @@ public class Midtown {
     ///////MID TOWN NAV////////
     else if(input.equals("UT")) {
       player.cls();
-      downtown(player);
+      uptown(player);
     }
 
     else if(input.equals("UT")) {
       player.cls();
-      uptown(player);
+      downtown(player);
     }
 
     else if(input.equals("EV")) {
@@ -161,43 +157,70 @@ public class Midtown {
   //uptown
   public static void uptown(Player player){
   	System.out.println("your in uptown");
+    returnToMidtown(player);
   }
 
   //downtown
   public static void downtown(Player player){
   	System.out.println("your in downtown");
+    returnToMidtown(player);
   }
 
   //eastVillage
   public static void eastVillage(Player player){
   	System.out.println("your in eastVillage");
+    returnToMidtown(player);
   }
 
   //hotel
   public static void hotel(Player player){
   	System.out.println("your in the hotel");
+    returnToMidtown(player);
   }
 
   //market
   public static void market(Player player){
   	System.out.println("your in the market");
+    returnToMidtown(player);
   }
 
   //bank
   public static void bank(Player player){
   	System.out.println("your in the bank");
+    returnToMidtown(player);
   }
 
   //park
   public static void park(Player player){
   	System.out.println("your in the park");
+    returnToMidtown(player);
   }
 
   //gym
   public static void gym(Player player){
   	System.out.println("your in the gym.");
+    returnToMidtown(player);
   }
 
+  //return to midtown
+  public static String returnToMidtown(Player player){
+
+    Scanner console = new Scanner(System.in);
+    String output = console.next();
+    System.out.println();
+
+    //take input
+    //if input == MT
+    //return to midtown
+    if(output.equals("MT")){
+      player.cls();
+      System.out.println(output);
+      midtown(player);
+    }
+
+    return output;
+
+  }
   //map
   public static void map(){
   	System.out.println(midtownMap);				
