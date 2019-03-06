@@ -74,6 +74,7 @@ public class VendingMachine {
 	public void printItems(){
 		System.out.println(Arrays.toString(this.items));
 		System.out.println(Arrays.toString(this.price));
+		System.out.println("to buy item, type it's name.");
 	}
 
 }

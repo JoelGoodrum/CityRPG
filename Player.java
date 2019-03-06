@@ -33,6 +33,10 @@ public class Player {
     return "health: " + this.health;
   }
 
+  //show cash
+  public String showCash(){
+    return "wallet: $" + this.cash;
+  }
 
   //see if there are items
   public boolean isEmptyItems(){
@@ -138,6 +142,12 @@ public class Player {
     if(input.equals("items")){
       return this.showItems() + "\n";
     }
+
+    if(input.equals("cash")){
+      return this.showCash() + "\n";
+    }
+
+
 
     else {
       return "";

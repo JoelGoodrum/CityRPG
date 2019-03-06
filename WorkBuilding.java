@@ -105,8 +105,9 @@ public class WorkBuilding {
     //make level
     Levels socialRoomObj = new Levels(
       "your in the social room.\n" +
-      "theres a ping pong table, couch, tv, and a soda machine\n" +
+      "theres a ping pong table, couch, tv, and a vending machine\n" +
       "press \"CB\" to go to your cubacle.\n" +
+      "press \"V\" to go to vending machine \n" +
       "press \"H\" go to the hallway.\n",
       "commands: CB, H, "
     );
@@ -242,12 +243,28 @@ public class WorkBuilding {
       machineItems, machinePrice
     );
 
+    //display vendingMachine level
     machine.printItems();
+    System.out.println("press \"S\" to return to the social room");
+    player.showCommands();
+    System.out.print("\nyour command: ");
+
+    //display commands
 
     //take player input
     Scanner console = new Scanner(System.in);
     String input = console.next();
     System.out.println();
+
+     //take input
+    //if input == constant input
+    //display constant input
+    String output = player.commandInput(input);
+    if(output.length() > 0){
+      player.cls();
+      System.out.println(output);
+      vendingMachine(player);
+    }
 
     if(input.equals("coke")){
       player.cls();
@@ -256,15 +273,29 @@ public class WorkBuilding {
     }
 
     else if(input.equals("pepsi")){
+      player.cls();
       machine.buyItem(machine, "pepsi", player);
+      vendingMachine(player);
     }
 
     else if(input.equals("S")){
+      player.cls();
       socialRoom(player);
+    }
+
+    else if(input.equals("exit")){
+      System.out.println("thank you for playing");
+    }
+
+    else if(input.equals("map")) {
+      player.cls();
+      map();
+      vendingMachine(player);
     }
 
     else {
       System.out.println("invalid");
+      vendingMachine(player);
     }
 
 
