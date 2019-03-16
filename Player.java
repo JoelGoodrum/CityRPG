@@ -18,12 +18,11 @@ public class Player {
     items = new String[5]; //five is how many items player can keep
 
     //constant commands
-    commands = new String[5];
+    commands = new String[4];
     commands[0] = "health";
     commands[1] = "items";
     commands[2] = "exit";
-    commands[3] = "map";
-    commands[4] = "cash";
+    commands[3] = "cash";
     
   }
 

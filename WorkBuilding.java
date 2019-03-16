@@ -34,7 +34,8 @@ public class WorkBuilding {
 
   //cubacle level
   public static void cubacle(Player player) {
-
+    //display map
+    System.out.println(WorkBuildingMap);
     //make level
     Levels cubacleObj = new Levels(
       "your in your cubacle and its such a boring day.\n" +
@@ -76,13 +77,6 @@ public class WorkBuilding {
       cubacle(player);
     }
 
-    //see map
-    else if(input.equals("map")) {
-      player.cls();
-      map();
-      cubacle(player);
-    }
-
 
     //exit game
     else if(input.equals("exit")){
@@ -102,6 +96,8 @@ public class WorkBuilding {
 
   //social room lvl
   public static void socialRoom(Player player) {
+    //display map
+    System.out.println(WorkBuildingMap);
     //make level
     Levels socialRoomObj = new Levels(
       "your in the social room.\n" +
@@ -152,14 +148,6 @@ public class WorkBuilding {
       hallway(player);
     }
 
-    //see map
-    else if(input.equals("map")) {
-      player.cls();
-      map();
-      socialRoom(player);
-    }
-
-
     //exit game
     else if(input.equals("exit")){
       System.out.println("thank you for playing.");
@@ -178,6 +166,9 @@ public class WorkBuilding {
 
   //hallway level
   public static void hallway(Player player) {
+    //display map
+    System.out.println(WorkBuildingMap);
+
     //make level
     Levels hallwayObj = new Levels(
       "your in the hallway.\n" +
@@ -221,13 +212,6 @@ public class WorkBuilding {
     else if(input.equals("S")) {
       player.cls();
       socialRoom(player);
-    }
-
-    //see map
-    else if(input.equals("map")) {
-      player.cls();
-      map();
-      hallway(player);
     }
 
   }
@@ -287,12 +271,6 @@ public class WorkBuilding {
       System.out.println("thank you for playing");
     }
 
-    else if(input.equals("map")) {
-      player.cls();
-      map();
-      vendingMachine(player);
-    }
-
     else {
       System.out.println("invalid");
       vendingMachine(player);
@@ -300,12 +278,6 @@ public class WorkBuilding {
 
 
   }
-
-  
-  //Display level map
-  public static void map() {
-    System.out.println(WorkBuildingMap);
-  } 
 
 
 }

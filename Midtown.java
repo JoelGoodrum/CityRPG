@@ -16,7 +16,7 @@
  " | Work Building         gym   |       | \n"+
  " |______________|||||||________|_______| \n"+
  "               =       =               \n"+
- "#W.Beach# --  --  --  =       =  --  --     \n"+
+ " #W.Beach# --  --  --  =       =  --  --     \n"+
  "               =       =               \n"+
 "   ------------- ||||||| ---------------\n"+
 "                                        \n"+
@@ -28,25 +28,30 @@ import java.util.*;
 public class Midtown {
 
   private static String midtownMap = 
- "              ##Uptown##\n"+
+ "               #Uptown#\n"+
  "                                \n"+
  "         _______       _________ \n"+
  "        |       |  |  |         |______ \n"+
  "        | hotel |     |  Bank   |      | \n"+
  "        |_______   |   _________|      | \n"+
  "        |                              | \n"+
- "        | maket |  |    Park           | \n"+    
- "  ______|_______|      ______          |    ##East Village## \n"+  
+ "        |market |  |    Park           | \n"+    
+ "  ______|_______|      ______          | \n"+  
  " |              |  |  |      |_        |  \n"+    
- " | Work Building      |  gym   |       | \n"+
- " |______________|  |  |________|_______| \n"+
- "                                       \n"+
- "                                       \n"+
- "              ##Downtown##  ";
+ " | Work Building         gym   |       | \n"+
+ " |______________|||||||________|_______| \n"+
+ "               =       =               \n"+
+ " #W.Beach# --  =       =  --  --  --     #East Village#\n"+
+ "               =       =               \n"+
+ "  ------------- ||||||| ---------------\n"+
+ "                                        \n"+
+ "              #Downtown#  ";
 
   //elevator - exits building - outside level
   public static void midtown(Player player){
-    System.out.println();
+   
+    //print map
+    System.out.println(midtownMap);
     //make level
     Levels midtownObj = new Levels(
       "you have exited the elevator and now your outside in Midtown\n" +
@@ -159,8 +164,11 @@ public class Midtown {
 
   //uptown
   public static void uptown(Player player){
-  	System.out.println("your in uptown");
-    returnToMidtown(player);
+
+    //uptown object
+    Uptown UpT = new Uptown();
+    UpT.uptown(player);
+
   }
 
   //downtown
