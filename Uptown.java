@@ -21,6 +21,7 @@
  "                                          \n"+
  "               #Midtown#   ";
 */
+import java.util.*;
 public class Uptown {
 
 	//uptown map
@@ -49,8 +50,25 @@ public class Uptown {
 	public static void uptown(Player player){
 		System.out.println(upTownMap);
 
-    	//uptown object
-  		System.out.println("your in uptown");
+	    Levels cubacleObj = new Levels(
+	      "your in uptown.\n" +
+	      "press \"NB\" to go to North Beach.\n" +
+	      "press \"S\" to go to School District.\n",
+	      "press \"MT\" to go to Midtown.\n",
+	      "commands: S, C, "
+	    );
+	      
+    
+
+    //show level description + commands
+    cubacleObj.showDescription();  
+    player.showCommands();
+
+    //player input
+    System.out.print("\nyour command: ");
+    Scanner console = new Scanner(System.in);
+    String input = console.next();
+    System.out.println();
     
     }
 
