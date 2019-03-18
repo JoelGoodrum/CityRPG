@@ -19,4 +19,8 @@
 
 public class NorthBeach {
 
+	public void nBeach(Player player) {
+		System.out.println("your in North Beach");
+	}
+
 }
