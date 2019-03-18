@@ -87,11 +87,18 @@ public class Uptown {
       		Midtown town = new Midtown();
       		town.midtown(player);
     	}
-
+    	//north beach nav
     	else if(input.equals("NB")) {
       		player.cls();
       		NorthBeach town = new NorthBeach();
       		town.nBeach(player);
+    	}
+
+    	//school distric nav
+    	else if(input.equals("S")) {
+      		player.cls();
+      		SchoolDistrict town = new SchoolDistrict();
+      		town.sDistrict(player);
     	}
 
     	//exit game

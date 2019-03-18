@@ -26,4 +26,8 @@
 
 public class SchoolDistrict{
 
+	//school district level
+	public static void sDistrict(Player player){
+		System.out.println("you're in the school district");
+	}
 }
