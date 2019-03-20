@@ -28,7 +28,7 @@ import java.util.*;
 public class Midtown {
 
   private static String midtownMap = 
- "               #Uptown#\n"+
+ "               #Uptown#        \n"+
  "                                \n"+
  "         _______       _________ \n"+
  "        |       |  |  |         |______ \n"+
@@ -52,19 +52,21 @@ public class Midtown {
    
     //print map
     System.out.println(midtownMap);
+
     //make level
     Levels midtownObj = new Levels(
       "you have exited the elevator and now your outside in Midtown\n" +
       "press \"UT\" to go to Uptown.\n" +
       "press \"DT\" to go to Downtown.\n" +
       "press \"EV\" to go to East Village.\n" +
+      "press \"WB\" to go to West Beach.\n" +
       "press \"H\" to go to the hotel.\n" +
       "press \"M\" to go to the market.\n" +
-      "press \"WB\" to go to the WorkBuilding.\n" +
+      "press \"WO\" to go to the WorkBuilding.\n" +
       "press \"B\" to go to the bank.\n" +
       "press \"P\" to go to the park.\n" +
       "press \"GYM\" to go to the gym.\n",
-      "commands: UT, DT, EV, H, M, WB, GS, B, P, GYM "
+      "commands: UT, DT, EV, WB, H, M, WO, B, P, GYM "
     );
 
     //show level description + commands
@@ -105,20 +107,30 @@ public class Midtown {
       eastVillage(player);
     }
 
+    //hotel
     else if(input.equals("H")) {
       player.cls();
       hotel(player);
     }
 
+    //market
     else if(input.equals("M")) {
       player.cls();
       market(player);
     }
 
-    else if(input.equals("WB")) {
+    //work building
+    else if(input.equals("WO")) {
       player.cls();
       WorkBuilding hallwayObj = new WorkBuilding();
       hallwayObj.hallway(player);
+    }
+
+    //west beach  
+    else if(input.equals("WB")) {
+      player.cls();
+      WestBeach town = new WestBeach();
+      town.wBeach(player);
     }
 
     else if(input.equals("B")) {
