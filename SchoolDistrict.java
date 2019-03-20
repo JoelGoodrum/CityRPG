@@ -23,7 +23,7 @@
  "                ##E.Village##             ";
 */
 
-
+import java.util.*;
 public class SchoolDistrict{
 
 	//map
