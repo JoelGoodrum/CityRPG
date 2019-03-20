@@ -17,6 +17,10 @@
 
 */
 
-public class SBeach{
+public class SouthBeach{
+
+	public static void sBeach(Player player){
+		System.out.println("s beach");
+	}
 	
 }
