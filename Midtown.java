@@ -97,7 +97,7 @@ public class Midtown {
       uptown(player);
     }
 
-    else if(input.equals("UT")) {
+    else if(input.equals("DT")) {
       player.cls();
       downtown(player);
     }
@@ -185,8 +185,8 @@ public class Midtown {
 
   //downtown
   public static void downtown(Player player){
-  	System.out.println("your in downtown");
-    returnToMidtown(player);
+  	Downtown town = new Downtown();
+    town.downtown(player);
   }
 
   //eastVillage
